@@ -1,0 +1,27 @@
+/* Esto es un comentario en css */
+
+body
+{
+    background-color: skyblue;
+}
+
+section /* selecto de componente de la página */
+{
+    background-color: grey;
+}
+
+#acerca-de-mi /* selector de id */
+{
+    background-color: lightblue;
+}
+
+.menu-option /* selector de clase  */
+{
+    background-color: purple;
+}
+
+.menu-option:hover /* selector de clase con pseudo-clase */
+{
+    background-color: white;
+}
+
