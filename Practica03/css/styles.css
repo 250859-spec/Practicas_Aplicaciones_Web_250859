@@ -85,3 +85,32 @@ nav a{
 nav a:hover{
     color: rgba(255, 0, 0, 0.322);
 }
+/* ================ */
+/* PARALLAX GENERAL */
+/* ================ */
+.parallax{
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+/* CAPA OSCURA */
+
+.parallax::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.38);
+}
+
+.parallax > *{
+    position: relative;
+    z-index: 2;
+}
