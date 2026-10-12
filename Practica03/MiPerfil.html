@@ -224,13 +224,13 @@
         <div class="carrusel-ventana">
             <div class="carrusel-pista">
                 <article class="favorito-card" tabindex="0" role="button" aria-label="Ver película favorita">
-                    <h3>🎬 Película favorita</h3>
+                    <h3>🎬 Película favorita - Red, White and Royal Blue</h3>
                     <p>Rojo, blanco y sangre azul.</p>
                     <img src="assets/images/poster_peli.png" class="poster" alt="Portada de Rojo, blanco y sangre azul">
                     <div class="favorito-info"><small>Haz clic para ver más</small></div>
                 </article>
                 <article class="favorito-card" tabindex="0" role="button" aria-label="Ver canción favorita">
-                    <h3>🎧 Canción favorita</h3>
+                    <h3>🎵 Canción favorita - Like Animals</h3>
                     <p>Like Animals.</p>
                     <img src="assets/images/portada_musica.png" class="portada-musica" alt="Portada de Like Animals">
                     <p class="nombre-cancion">LIKE ANIMALS</p>
@@ -241,8 +241,8 @@
                     <div class="favorito-info"><small>Haz clic para ampliar</small></div>
                 </article>
                 <article class="favorito-card" tabindex="0" role="button" aria-label="Ver libro favorito">
-                    <h3>📖 Libro favorito</h3>
-                    <p>Damian.</p>
+                    <h3>📖 Libro favorito - Damián</h3>
+                    <p>Damián.</p>
                     <img src="assets/images/libro.png" class="portada-libro" alt="PORTADA DEL LIBRO DAMIAN">
                     <div class="favorito-icono">📚</div>
                     <div class="favorito-info"><small>Haz clic para ver más</small></div>
@@ -257,6 +257,20 @@
         <button type="button" aria-label="Mostrar libro"></button>
     </div>
 </section>
+
+
+<div class="modal-favoritos" id="modal-favoritos" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true"
+         aria-labelledby="modal-titulo">
+        <div class="modal-cabecera">
+            <h2 id="modal-titulo">Mi favorito</h2>
+            <button type="button" id="cerrar-modal"
+                    aria-label="Cerrar">✕</button>
+        </div>
+        <div id="modal-contenido"></div>
+    </div>
+</div>
+
 
 
     <!-- ============================= -->
