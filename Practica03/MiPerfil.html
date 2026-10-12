@@ -216,31 +216,48 @@
         </div>
      </section>
 
-     <section id="favoritos" class="seccion solido-4">
-
-        <h2>⭐ Mis favoritos</h2>
-
-        <div class="grid tres">
-           
-            <article class="card">
-                <h3>🎬 Película favorita</h3>
-                <p>Rojo, blanco y sangre azul.</p>
-              </article>
-
-            <article class="card">
-                <h3>🎧  Canción favorita</h3>
-                <p>Like animals.</p>
-              </article>
-
-            <article class="card">
-                <h3>📖 Libro favorito</h3>
-                <p>Damian.</p>
-              </article>
-              
-            
+     
+<section id="favoritos" class="seccion solido-4">
+    <h2>⭐ Mis favoritos</h2>
+    <div class="carrusel">
+        <button class="carrusel-flecha anterior" type="button" aria-label="Favorito anterior">❮</button>
+        <div class="carrusel-ventana">
+            <div class="carrusel-pista">
+                <article class="favorito-card" tabindex="0" role="button" aria-label="Ver película favorita">
+                    <h3>🎬 Película favorita</h3>
+                    <p>Rojo, blanco y sangre azul.</p>
+                    <img src="assets/images/poster_peli.png" class="poster" alt="Portada de Rojo, blanco y sangre azul">
+                    <div class="favorito-info"><small>Haz clic para ver más</small></div>
+                </article>
+                <article class="favorito-card" tabindex="0" role="button" aria-label="Ver canción favorita">
+                    <h3>🎧 Canción favorita</h3>
+                    <p>Like Animals.</p>
+                    <img src="assets/images/portada_musica.png" class="portada-musica" alt="Portada de Like Animals">
+                    <p class="nombre-cancion">LIKE ANIMALS</p>
+                    <audio controls class="reproductor">
+                        <source src="assets/images/like_animals.mp3" type="audio/mpeg">
+                        Tu navegador no puede reproducir este audio.
+                    </audio>
+                    <div class="favorito-info"><small>Haz clic para ampliar</small></div>
+                </article>
+                <article class="favorito-card" tabindex="0" role="button" aria-label="Ver libro favorito">
+                    <h3>📖 Libro favorito</h3>
+                    <p>Damian.</p>
+                    <img src="assets/images/libro.png" class="portada-libro" alt="PORTADA DEL LIBRO DAMIAN">
+                    <div class="favorito-icono">📚</div>
+                    <div class="favorito-info"><small>Haz clic para ver más</small></div>
+                </article>
             </div>
+        </div>
+        <button class="carrusel-flecha siguiente" type="button" aria-label="Siguiente favorito">❯</button>
+    </div>
+    <div class="carrusel-indicadores">
+        <button type="button" class="activo" aria-label="Mostrar película"></button>
+        <button type="button" aria-label="Mostrar canción"></button>
+        <button type="button" aria-label="Mostrar libro"></button>
+    </div>
+</section>
 
-     </section> 
 
     <!-- ============================= -->
     <!-- REDES SOCIALES -->
@@ -439,5 +456,21 @@
         </a>
     </footer>
     
+
+
+    <!--LOS MODALES, OTRA COSA-->
+<div class="modal-favoritos" id="modal-favoritos" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <div class="modal-cabecera">
+            <h2 id="modal-titulo">Mi favorito</h2>
+            <button type="button" id="cerrar-modal" aria-label="Cerrar">✕</button>
+        </div>
+        <div id="modal-contenido"></div>
+    </div>
+</div>
+<!--IGUAL ESTO-->
+
+<script src="js/app2.js"></script>
+
 </body>
 </html>
