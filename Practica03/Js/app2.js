@@ -1,5 +1,7 @@
 
+
 const pista = document.querySelector(".carrusel-pista");
+const ventana = document.querySelector(".carrusel-ventana");
 const tarjetas = [...document.querySelectorAll(".favorito-card")];
 const anterior = document.querySelector(".carrusel-flecha.anterior");
 const siguiente = document.querySelector(".carrusel-flecha.siguiente");
@@ -11,12 +13,15 @@ const modalContenido = document.getElementById("modal-contenido");
 const cerrarModal = document.getElementById("cerrar-modal");
 
 let indice = 0;
+let toqueInicial = 0;
 
 function mostrarTarjeta(n) {
-    if (!pista || tarjetas.length === 0) return;
+    if (!pista || !ventana || !tarjetas.length) return;
 
     indice = (n + tarjetas.length) % tarjetas.length;
-    pista.style.transform = `translateX(-${indice * 100}%)`;
+
+    pista.style.transform =
+        `translateX(-${indice * ventana.clientWidth}px)`;
 
     indicadores.forEach((boton, i) => {
         boton.classList.toggle("activo", i === indice);
@@ -30,6 +35,20 @@ indicadores.forEach((boton, i) => {
     boton.addEventListener("click", () => mostrarTarjeta(i));
 });
 
+ventana?.addEventListener("touchstart", e => {
+    toqueInicial = e.changedTouches[0].clientX;
+}, { passive: true });
+
+ventana?.addEventListener("touchend", e => {
+    const diferencia = e.changedTouches[0].clientX - toqueInicial;
+
+    if (Math.abs(diferencia) > 45) {
+        mostrarTarjeta(indice + (diferencia < 0 ? 1 : -1));
+    }
+}, { passive: true });
+
+window.addEventListener("resize", () => mostrarTarjeta(indice));
+
 function abrirModal(tarjeta) {
     if (!modal || !modalTitulo || !modalContenido) return;
 
@@ -40,16 +59,7 @@ function abrirModal(tarjeta) {
 
     const tipo = tarjeta.getAttribute("aria-label");
 
-    
-if (tipo === "Ver libro favorito") {
-   const lector = document.createElement("iframe");
-lector.src = "assets/images/DAMIAN.pdf";
-lector.title = "Libro favorito: Damián";
-modalContenido.appendChild(lector);
-
-
-
-    } else if (tipo === "Ver película favorita") {
+    if (tipo === "Ver película favorita") {
         const video = document.createElement("video");
         video.controls = true;
         video.playsInline = true;
@@ -60,45 +70,58 @@ modalContenido.appendChild(lector);
         fuente.type = "video/mp4";
 
         video.appendChild(fuente);
-        video.appendChild(
-            document.createTextNode("Tu navegador no puede reproducir este video.")
-        );
-
         modalContenido.appendChild(video);
+        video.load();
 
-    } else {
-        [...tarjeta.children].forEach(elemento => {
-            if (elemento.classList.contains("favorito-info")) return;
-            if (elemento.matches("audio")) return;
-            modalContenido.appendChild(elemento.cloneNode(true));
-        });
+    } else if (tipo === "Ver canción favorita") {
+        const portada = tarjeta.querySelector(".portada-musica");
 
-        const audioOriginal = tarjeta.querySelector("audio");
-
-        if (audioOriginal) {
-            modalContenido.appendChild(audioOriginal.cloneNode(true));
+        if (portada) {
+            modalContenido.appendChild(portada.cloneNode(true));
         }
+
+        const audio = document.createElement("audio");
+        audio.controls = true;
+        audio.preload = "metadata";
+
+        const fuente = document.createElement("source");
+        fuente.src = "assets/images/like_animals.mp3";
+        fuente.type = "audio/mpeg";
+
+        audio.appendChild(fuente);
+        modalContenido.appendChild(audio);
+        audio.load();
+
+    } else if (tipo === "Ver libro favorito") {
+        const portada = tarjeta.querySelector(".portada-libro");
+
+        if (portada) {
+            modalContenido.appendChild(portada.cloneNode(true));
+        }
+
+        const lector = document.createElement("iframe");
+        lector.src = "assets/images/DAMIAN.pdf";
+        lector.title = "Libro favorito: Damián";
+
+        modalContenido.appendChild(lector);
     }
 
     modal.hidden = false;
 }
 
 tarjetas.forEach(tarjeta => {
-    tarjeta.addEventListener("click", evento => {
-        if (evento.target.closest("audio, button, video, iframe")) return;
-        abrirModal(tarjeta);
-    });
+    tarjeta.addEventListener("click", () => abrirModal(tarjeta));
 
-    tarjeta.addEventListener("keydown", evento => {
-        if (evento.key === "Enter" || evento.key === " ") {
-            evento.preventDefault();
+    tarjeta.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
             abrirModal(tarjeta);
         }
     });
 });
 
 function cerrarVentana() {
-    if (!modal) return;
+    if (!modal || !modalContenido) return;
 
     modalContenido.querySelectorAll("video, audio").forEach(media => {
         media.pause();
@@ -110,15 +133,14 @@ function cerrarVentana() {
 
 cerrarModal?.addEventListener("click", cerrarVentana);
 
-modal?.addEventListener("click", evento => {
-    if (evento.target === modal) cerrarVentana();
+modal?.addEventListener("click", e => {
+    if (e.target === modal) cerrarVentana();
 });
 
-document.addEventListener("keydown", evento => {
-    if (evento.key === "Escape" && modal && !modal.hidden) {
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && modal && !modal.hidden) {
         cerrarVentana();
     }
 });
 
 mostrarTarjeta(0);
-
