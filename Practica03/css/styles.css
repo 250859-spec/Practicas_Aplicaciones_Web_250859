@@ -1088,18 +1088,93 @@ em, i {
 
 
 /* Adaptación para celulares */
+
+/* ===== DISEÑO RESPONSIVO PARA CELULARES ===== */
 @media screen and (max-width: 768px) {
+
     html,
     body {
         width: 100%;
-        max-width: 100%;
+        min-width: 0;
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
+        overflow-x: clip;
     }
 
-    * {
-        box-sizing: border-box;
+    main,
+    section,
+    header,
+    footer,
+    .parallax,
+    .seccion,
+    .contenedor {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+        background-size: cover;
+        padding: 75px 12px 35px;
+    }
+
+    .seccion {
+        padding: 55px 16px;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px 16px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .hero-text {
+        text-align: center;
+        min-width: 0;
+    }
+
+    .hero-text h1,
+    .hero-card h1 {
+        font-size: 2rem;
+        overflow-wrap: anywhere;
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .grid,
+    .grid.seis {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        gap: 18px;
+    }
+
+    .card,
+    .favorito-card,
+    .datos article {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        padding: 10px;
+    }
+
+    nav ul {
+        gap: 16px;
+        padding: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
 
     img,
@@ -1108,24 +1183,142 @@ em, i {
         max-width: 100%;
     }
 
-    section,
-    header,
-    main,
-    footer {
-        max-width: 100%;
+    .carrusel {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+
+/* ===== CORRECCIÓN RESPONSIVA DEFINITIVA ===== */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    body {
+        position: relative;
     }
 
     nav {
         width: 100%;
-        overflow-x: auto;
+        left: 0;
+        right: 0;
+        padding: 8px 12px;
+        justify-content: flex-start;
     }
 
-    .contenedor,
-    .container,
-    .contenido,
-    .hero,
-    .inicio {
+    nav ul {
         width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        gap: 16px;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .parallax {
+        width: 100%;
+        min-height: auto;
+        padding: 90px 12px 35px;
+        background-attachment: scroll;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px 16px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .perfil {
+        width: 130px;
+        height: 130px;
+        max-width: 100%;
+    }
+
+    .hero-text {
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .seccion {
+        width: 100%;
+        min-height: auto;
+        padding: 50px 16px;
+    }
+
+    .contenedor {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .grid,
+    .grid.seis {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
+        gap: 18px;
+    }
+
+    .card,
+    .datos article {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .carrusel {
+        width: 100%;
+        max-width: 100%;
+        gap: 6px;
+    }
+
+    .carrusel-flecha {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carrusel-ventana {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .favorito-card {
+        min-width: 0;
+        padding: 12px;
+    }
+
+    .redes-sociales a {
+        min-width: 100px;
+        max-width: 100%;
+    }
+
+    img,
+    video,
+    iframe {
         max-width: 100%;
     }
 }
