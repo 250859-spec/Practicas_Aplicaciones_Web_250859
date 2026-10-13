@@ -1,7 +1,4 @@
 
-
-
-
 const pista = document.querySelector(".carrusel-pista");
 const tarjetas = [...document.querySelectorAll(".favorito-card")];
 const anterior = document.querySelector(".carrusel-flecha.anterior");
@@ -36,12 +33,28 @@ indicadores.forEach((boton, i) => {
 function abrirModal(tarjeta) {
     if (!modal || !modalTitulo || !modalContenido) return;
 
-    modalTitulo.textContent = tarjeta.querySelector("h3")?.textContent || "Mi favorito";
+    modalTitulo.textContent =
+        tarjeta.querySelector("h3")?.textContent || "Mi favorito";
+
     modalContenido.replaceChildren();
 
     const tipo = tarjeta.getAttribute("aria-label");
 
-    if (tipo === "Ver película favorita") {
+    
+if (tipo === "Ver libro favorito") {
+    const lector = document.createElement("iframe");
+    lector.src = "assets/images/DAMIAN.pdf#toolbar=0&navpanes=0&view=FitH";
+    lector.title = "Libro Damián";
+    lector.style.width = "100%";
+    lector.style.height = "75vh";
+    lector.style.border = "none";
+    lector.style.background = "#fff";
+
+    modalContenido.appendChild(lector);
+
+
+
+    } else if (tipo === "Ver película favorita") {
         const video = document.createElement("video");
         video.controls = true;
         video.playsInline = true;
@@ -52,23 +65,24 @@ function abrirModal(tarjeta) {
         fuente.type = "video/mp4";
 
         video.appendChild(fuente);
-        video.appendChild(document.createTextNode("Tu navegador no puede reproducir este video."));
+        video.appendChild(
+            document.createTextNode("Tu navegador no puede reproducir este video.")
+        );
+
         modalContenido.appendChild(video);
 
-    } else if (tipo === "Ver libro favorito") {
-    const portada = tarjeta.querySelector(".portada-libro");
-
-    if (portada) {
-        modalContenido.appendChild(portada.cloneNode(true));
-    }
-
-    const lector = document.createElement("iframe");
-    lector.src = "assets/images/DAMIAN.pdf";
     } else {
         [...tarjeta.children].forEach(elemento => {
             if (elemento.classList.contains("favorito-info")) return;
+            if (elemento.matches("audio")) return;
             modalContenido.appendChild(elemento.cloneNode(true));
         });
+
+        const audioOriginal = tarjeta.querySelector("audio");
+
+        if (audioOriginal) {
+            modalContenido.appendChild(audioOriginal.cloneNode(true));
+        }
     }
 
     modal.hidden = false;
@@ -112,3 +126,4 @@ document.addEventListener("keydown", evento => {
 });
 
 mostrarTarjeta(0);
+

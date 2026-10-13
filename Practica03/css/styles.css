@@ -144,7 +144,7 @@ nav a:hover{
     height: clamp(190px, 40vmin, 150px);
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid rgba(140, 0, 255);
+    border: 4px solid #D8B4E2;
     display: block;
     box-shadow: 0 10px 30px rgba(60, 10, 88, 0.76);
 }
@@ -848,3 +848,241 @@ blockquote{
 .modal-favoritos:not([hidden]) {
     display: flex;
 }
+
+/* CORRECCION DE COLORES Y ESTILOS */
+
+/* ===== ESTILO MORADO Y ROJO DIFUMINADO ===== */
+
+body {
+    background: linear-gradient(135deg, #170f27, #35172f, #651f3b);
+    color: #f8fafc;
+}
+
+.solido-1 {
+    background: linear-gradient(135deg, #f3eafa, #f9e5ed);
+    color: #38213f;
+}
+
+.solido-2 {
+    background: linear-gradient(120deg, #251432, #492044, #722b48);
+    color: #fff0f6;
+}
+
+.solido-3 {
+    background: linear-gradient(135deg, #f4e8f5, #fbe4e8);
+    color: #38213f;
+}
+
+.solido-4 {
+    background: linear-gradient(135deg, #1e1732, #402044, #682b49);
+    color: #f8eaff;
+}
+
+.seccion h2 {
+    color: #a86ad1;
+}
+
+.solido-1 h2,
+.solido-3 h2,
+.redes h2 {
+    color: #8b4ca8;
+}
+
+.card,
+.datos article {
+    background: linear-gradient(145deg, #86519e, #a65382, #bd5269);
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(44, 12, 49, 0.2);
+}
+
+.card h3,
+.card h4,
+.card p,
+.datos article h3,
+.datos article p {
+    color: #fff;
+}
+
+.card:hover {
+    background: linear-gradient(145deg, #a76bc7, #d06b8a);
+    box-shadow: 0 18px 35px rgba(85, 20, 70, 0.3);
+}
+
+nav a:hover {
+    color: #e8a0d0;
+}
+
+.btn {
+    background: linear-gradient(135deg, #8651e2, #c04f79);
+    color: white;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #a66bea, #e66c83);
+}
+
+.favorito-card {
+    background: linear-gradient(145deg, #49305e, #815080, #a64f70);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 14px 35px rgba(15, 5, 28, 0.22);
+}
+
+.carrusel-flecha {
+    background: linear-gradient(145deg, #68449b, #a34672);
+    border-color: #a77bb8;
+}
+
+.carrusel-flecha:hover {
+    background: linear-gradient(145deg, #8651e2, #d45478);
+}
+
+.carrusel-indicadores button.activo {
+    background: #d66baf;
+}
+
+.redes {
+    background: linear-gradient(135deg, #f2e8fa, #fbe4e9);
+}
+
+.redes-sociales a {
+    background: linear-gradient(145deg, #48354e, #8651e2, #b44973);
+}
+
+.redes-sociales a:hover {
+    background: linear-gradient(145deg, #7040b5, #b44882, #dc5c72);
+    box-shadow: 0 14px 30px rgba(110, 39, 103, 0.3);
+}
+
+/* Modal y visor del libro */
+
+.modal-favoritos {
+    padding: 12px;
+    background: rgba(15, 7, 24, 0.88);
+    backdrop-filter: blur(8px);
+}
+
+.modal-panel {
+    width: min(1050px, 96vw);
+    max-height: 94vh;
+    overflow-y: auto;
+    padding: 18px;
+    background: linear-gradient(145deg, #2a1b3d, #512747);
+    border: 1px solid rgba(226, 170, 224, 0.35);
+    color: #fff;
+}
+
+#modal-contenido iframe {
+    display: block;
+    width: 100%;
+    height: 76vh;
+    min-height: 400px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 12px;
+    background: white;
+}
+
+#cerrar-modal {
+    background: linear-gradient(135deg, #8651e2, #c04f79);
+}
+
+#modal-contenido video {
+    width: 100%;
+    max-height: 75vh;
+    background: #100b15;
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    #modal-contenido iframe {
+        height: 70vh;
+        min-height: 350px;
+    }
+
+    .modal-panel {
+        padding: 12px;
+    }
+}
+
+
+/* ===== FONDOS OSCUROS CON DEGRADADO MORADO ===== */
+
+.solido-1 {
+    background: linear-gradient(135deg, #171022 0%, #30203f 55%, #45243e 100%);
+    color: #f8eafa;
+}
+
+.solido-2 {
+    background: linear-gradient(135deg, #100d1c 0%, #29172f 55%, #492039 100%);
+    color: #f8eafa;
+}
+
+.solido-3 {
+    background: linear-gradient(135deg, #1a1026 0%, #382044 55%, #51253f 100%);
+    color: #f8eafa;
+}
+
+.solido-4 {
+    background: linear-gradient(135deg, #100d1c 0%, #2d1938 55%, #54233f 100%);
+    color: #f8eafa;
+}
+
+/* Títulos de las secciones */
+.solido-1 h2,
+.solido-2 h2,
+.solido-3 h2,
+.solido-4 h2 {
+    color: #d6a0ed;
+}
+
+/* Redes sociales: fondo que combine con los demás */
+.redes {
+    background: linear-gradient(135deg, #171022 0%, #30203f 55%, #54233f 100%);
+    color: #f8eafa;
+}
+
+.redes h2 {
+    color: #d6a0ed;
+}
+
+.redes > p {
+    color: #e4d2ed;
+}
+
+
+/* Correcion para libro */
+
+#modal-contenido iframe {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    min-height: 400px;
+    border: none;
+    border-radius: 8px;
+    margin: 12px auto 0;
+    background: #fff;
+}
+
+.modal-panel {
+    width: min(850px, 96vw);
+    max-height: 95vh;
+    overflow-y: auto;
+}
+/* CAMBIAR COLOR LETRA */
+
+
+/* Colores de las letras del inicio */
+
+/* Forzar colores del texto de presentación */
+h1 {
+    color: #F8E9FF !important;
+}
+
+p {
+    color: #FFFFFF !important;
+}
+
+em, i {
+    color: #E7B8D8 !important;
+}
+
