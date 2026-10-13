@@ -42,15 +42,10 @@ function abrirModal(tarjeta) {
 
     
 if (tipo === "Ver libro favorito") {
-    const lector = document.createElement("iframe");
-    lector.src = "assets/images/DAMIAN.pdf#toolbar=0&navpanes=0&view=FitH";
-    lector.title = "Libro Damián";
-    lector.style.width = "100%";
-    lector.style.height = "75vh";
-    lector.style.border = "none";
-    lector.style.background = "#fff";
-
-    modalContenido.appendChild(lector);
+   const lector = document.createElement("iframe");
+lector.src = "assets/images/DAMIAN.pdf";
+lector.title = "Libro favorito: Damián";
+modalContenido.appendChild(lector);
 
 
 
