@@ -1086,3 +1086,46 @@ em, i {
     color: #E7B8D8 !important;
 }
 
+
+/* Adaptación para celulares */
+@media screen and (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+
+    section,
+    header,
+    main,
+    footer {
+        max-width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .contenedor,
+    .container,
+    .contenido,
+    .hero,
+    .inicio {
+        width: 100%;
+        max-width: 100%;
+    }
+}
