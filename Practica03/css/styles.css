@@ -1322,3 +1322,140 @@ em, i {
         max-width: 100%;
     }
 }
+
+/* ===== AJUSTES PARA CELULARES ===== */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    /* Navegación desplazable horizontalmente */
+    nav {
+        width: 100%;
+        max-width: 100%;
+        padding: 8px 12px;
+        overflow: hidden;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0 0 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav li {
+        flex: 0 0 auto;
+    }
+
+    nav a {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    /* Secciones a todo el ancho disponible */
+    .parallax,
+    .seccion {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
+
+    /* Inicio */
+    .hero-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 14px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-text {
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        overflow-wrap: anywhere;
+    }
+
+    /* Tarjetas: una columna en el celular */
+    .grid,
+    .grid.seis {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        gap: 18px;
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card,
+    .datos article,
+    .contenedor {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Carrusel de favoritos */
+    .carrusel {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        gap: 5px;
+    }
+
+    .carrusel-ventana {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .carrusel-flecha {
+        flex: 0 0 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .favorito-card {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+}
