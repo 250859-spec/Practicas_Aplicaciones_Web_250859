@@ -52,37 +52,36 @@ Diseñar y desarrollar una página web personal utilizando HTML5, CSS3 y JavaScr
 El proyecto está organizado en carpetas para separar el código, los estilos y los recursos multimedia utilizados en el portafolio web.
 
 ```text
-Practicas_Aplicaciones_Web_250683/
+Practicas_Aplicaciones_Web_250859/
 ├── Practica02/
 ├── Practica03/
 │   ├── assets/
 │   │   ├── audios/
-│   │   │   └── Body to Body - BTS.mp3
+│   │   │   └── Like Animals - BTS.mp3
 │   │   ├── documents/
-│   │   │   └── A Tres Metros Sobre El Cielo - Federico Moccia.pdf
+│   │   │   └── Damián .pdf
 │   │   ├── images/
-│   │   │   ├── book_portait.jpg
+│   │   │   ├── calificacion-de-cinco-estrellas.png
 │   │   │   ├── captura-1.png
 │   │   │   ├── captura-2.png
 │   │   │   ├── captura-3.png
 │   │   │   ├── captura-4.png
 │   │   │   ├── captura-5.png
 │   │   │   ├── captura-6.png
-│   │   │   ├── captura-7.png
-│   │   │   ├── feliz.png
-│   │   │   ├── fondo-11.png
-│   │   │   ├── fondo-12.png
-│   │   │   ├── fondo-13.png
-│   │   │   ├── fondo-14.png
-│   │   │   ├── movie_portait.jpg
-│   │   │   ├── perfil-3.png
-│   │   │   ├── perfil-4.png
-│   │   │   └── song_portait.jpg
+│   │   │   ├── libro.png
+│   │   │   ├── fondo-1.gpg
+│   │   │   ├── fondo-2.gpg
+│   │   │   ├── fondo-3.gpg
+│   │   │   ├── fondo-4.gpg
+│   │   │   ├── poster-peli.png
+│   │   │   ├── perfil1.jpeg
+│   │   │   ├── portada_musica.png
+│   │   │   └── estrella.png
 │   │   └── videos/
-│   │       └── Una chica del siglo XX (Tráiler) - Tráiler en Español _ Netflix.mp4
+│   │       └── Red, White and Royal Blue (Tráiler) - Tráiler en Inglés _ Prime Video.mp4
 │   ├── css/
 │   │   └── styles.css
-│   ├── js/
+│   ├── Js/
 │   │   └── app2.js
 │   ├── index.html
 │   └── readme.md
