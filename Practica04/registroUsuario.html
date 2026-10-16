@@ -16,6 +16,18 @@
         <form action="" method="post">
             <fieldset>
                 <legend>Datos Personales</legend>
+                <label for="tituloCortesia">Título de Cortesía:</label>
+                <select id="tituloCortesia">
+                    <option>Sr.</option>
+                    <option>Sra.</option>
+                    <option>Srta.</option>
+                    <option>Ing.</option>
+                    <option>Dr.</option>
+                    <option>Mtro.</option>
+                    <option>Ninguno</option>
+                </select>
+                <br>
+                <br>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" placeholder="Paola" required>
                 <br>
@@ -91,8 +103,90 @@
                 <input type="text" id="codigoPostal" placeholder="01234">
             </fieldset>
             <br>
-            <input type="submit" value="Enviar Solicitud"
+            <input type="checkbox" value="validado"> Acepto términos y condiciones del uso de la plataforma MecaGest.
+            <br>
+            <br>
+            <input type="submit" value="Enviar Solicitud">
+            <input type="reset" value="Limpiar Formularios">
         
+
+        </form>
+
+
+        <br>
+        <br>
+        <form> <!--Elementos que usaremos mas adelante-->
+            <fieldset>
+                <legend>Visualización de Citas por Mes:</legend>
+                <label for="mesCitas">Por favor elige un mes:</label>
+                <input type="month" id="mesCitas">
+                <button id="verCitas">Ver Citas</button>
+                <br>
+                <br>
+                <h4>Las citas programadas para el mes elegido son:</h4>
+                <br>
+                <br>
+                <table style="border: 1px solid black">
+                    <tr>
+                        <th style="border: 1px solid black">No.</th>
+                        <th style="border: 1px solid black">Nombre</th>
+                        <th style="border: 1px solid black">Descripción</th>
+                        <th style="border: 1px solid black">Fecha Programada</th>
+                        <th style="border: 1px solid black">Estatus Actual</th>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">1.</td>
+                        <td style="border: 1px solid black">Cita de entrega de unidad reparada con el cliente: Mauricio Mejía, Unidad: Volkswagen, Jetta 2020</td>
+                        <td style="border: 1px solid black">Se realizó un cambio de bujías, la unidad esta lista para entrega.</td>
+                        <td style="border: 1px solid black">10 de Octubre de 2026</td>
+                        <td style="border: 1px solid black">Atendida</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">2.</td>
+                        <td style="border: 1px solid black">Cita de valoración con el cliente: Paola Franco, Unidad: Nissan, Sentra 2022</td>
+                        <td style="border: 1px solid black">El cliente solicita una revisión del cuerpo de acelaración de la unidad para posible mantenimiento correctivo.</td>
+                        <td style="border: 1px solid black">26 de Octubre de 2026</td>
+                        <td style="border: 1px solid black">Programada</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">3.</td>
+                        <td style="border: 1px solid black">Cita de revisión con el cliente: Mauricio Mejía, Unidad: Volkswagen, Jetta 2020</td>
+                        <td style="border: 1px solid black">A la unidad se le hicieron cambios de bujías, pero el cliente reporta un sonido extraño.</td>
+                        <td style="border: 1px solid black">17 de Octubre de 2026</td>
+                        <td style="border: 1px solid black">Programada</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">4.</td>
+                        <td style="border: 1px solid black">Cita de valoración con la cliente: Paola Franco, Unidad: Nissan, Sentra 2022</td>
+                        <td style="border: 1px solid black">El cliente solicita una revisión del cuerpo de acelaración de la unidad para posible mantenimiento correctivo.</td>
+                        <td style="border: 1px solid black">16 de Octubre de 2026</td>
+                        <td style="border: 1px solid black">Cancelada</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">5.</td>
+                        <td style="border: 1px solid black">Cita de valoración con la cliente: Alejandra Romero, Unidad: Toyota, Hilux 2012</td>
+                        <td style="border: 1px solid black">El cliente solicita una revisión del cuerpo de acelaración de la unidad para posible mantenimiento correctivo.</td>
+                        <td style="border: 1px solid black">20 de Octubre de 2026</td>
+                        <td style="border: 1px solid black">Reprogramada</td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Configuraciones de la interfaz:</legend>
+                <label for="fontColor">Color de fuente:</label>
+                <input type="color" id="fontColor">
+                <br>
+                <br>
+                <label for="backgroundColor">Color de fondo:</label>
+                <input type="color" id="backgroundColor" value="#CCC">
+            </fieldset>
+
 
         </form>
     </main>
