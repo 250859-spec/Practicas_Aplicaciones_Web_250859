@@ -115,6 +115,7 @@
 
         <br>
         <br>
+        <h4> Estos campos son para futuro uso, no son parte del Formulario Registro de Usuarios</h4>
         <form> <!--Elementos que usaremos mas adelante-->
             <fieldset>
                 <legend>Visualización de Citas por Mes:</legend>
@@ -185,6 +186,135 @@
                 <br>
                 <label for="backgroundColor">Color de fondo:</label>
                 <input type="color" id="backgroundColor" value="#CCC">
+            </fieldset>
+
+            <fieldset>
+                <legend>Configuración de Mi cuenta /perfil: </legend>
+                <label for="userPhoto">Foto de Perfil:</label>
+                <input type="image" id="userPhoto" accept="image/*">
+                <br>
+                <br>
+                <input type="image" id="buttonNext" src="assets/images/next.gif" alt="Siguiente" width="50" height="50">
+                <br>
+                <br>
+                <input type="hidden" id="userId" value="25XXXX">
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos Fiscales:</legend>
+                <label for="rfc">Registro Federal de Causantes (RFC): </label>
+                <input type="text" id="rfc" maxlength="13" placeholder="FAGPXXXXXXXXXXXXXX">
+                <br>
+                <br>
+                <label for="fiscalSituation">Constancia de Situación Fiscal: </label>
+                <input type="file" id="fiscalSituation" accept=".pdf">
+                <input type="hidden" id="userId" value="25XXXX">
+            </fieldset>
+
+            <fieldset>
+                <legend>Solicitud de Cita: </legend>
+                <label for="dateAppoinment">Fecha de la Cita:</label>
+                <input type="date" id="dateAppoinment">
+                <br>
+                <br>
+                <label for="descriptionText">Descripción de la Cita:</label>
+                <textarea id="descriptionText"></textarea>
+                <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Solicitud de Herramientas para Servicio Mecánico</legend>
+                <label for="resourceCategory">Categoría de Recurso:</label>
+                <input type="radio" id="resorceRefaction" name="resourceCategory" value="refaccion">Refacción
+                <input type="radio" id="resourceTool" name="resourceCategory" value="tool">Herramienta
+                <br>
+                <br>
+                
+                <label for="resourceCategory">Elige la pieza:</label>
+                
+                <select>
+                    <optgroup label="Piezas de Motor">
+                        <option value="bujia">Bujía</option>
+                        <option value="filtro_aceite">Filtro de Aceite</option>
+                        <option value="banda_distribucion">Banda de Distribución</option>
+                    </optgroup>
+                    <optgroup label="Pezas de Transmisión">
+                        <option value="disco_embrague">Disco de embrague</option>
+                        <option value="collarin">Collarin de embrague</option>
+                        <option value="junta_homocinetica">Junta Homocinética</option>
+                        <option value="semieje">Semieje de Transmisión</option>
+                    </optgroup>
+                    <optgroup label="Piezas de Suspensión">
+                        <option value="amortiguador">Amortiguador</option>
+                        <option value="rotulae">Rótula de suspensión</option>
+                    </optgroup>
+                    <optgroup label="Llaves y Herramientas Especializadas">
+                        <option value="llave_combinada">Llave Combinada</option>
+                        <option value="llave_torx">Llave Torx</option>
+                        <option value="llave_dinamometrica">Llave Dinamométrica</option>
+                        <option value="extractor_poleas">Extractor de Poleas</option>
+                        <option value="compresor_resortes">Compresor de Resortes</option>
+                        <option value="scanner_obd2">Escánner automotriz OBD-II</option>
+                    </optgroup>
+                </select>
+
+                <label for="toolQuantity">Cantidad:</label>
+                <input type="number" id="toolQuantity" min="1" max="10">
+                <button id="requestTool">solicitar Herramienta</button>
+                <br>
+                <br>
+                <table style="border: 1px solid black">
+                    <tr>
+                        <th style="border: 1px solid black">No.</th>
+                        <th style="border: 1px solid black">Herramienta</th>
+                        <th style="border: 1px solid black">Categoría</th>
+                        <th style="border: 1px solid black">Cantidad</th>
+                        <th style="border: 1px solid black">Unidad</th>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">1.</td>
+                        <td style="border: 1px solid black">Llave combinada</td>
+                        <td style="border: 1px solid black">Herramienta manual</td>
+                        <td style="border: 1px solid black">4</td>
+                        <td style="border: 1px solid black">Piezas</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">2.</td>
+                        <td style="border: 1px solid black">Llave dinamométrica</td>
+                        <td style="border: 1px solid black">Herramienta especializada</td>
+                        <td style="border: 1px solid black">2</td>
+                        <td style="border: 1px solid black">Piezas</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">3.</td>
+                        <td style="border: 1px solid black">Extractor de poleas</td>
+                        <td style="border: 1px solid black">Herramienta especializada</td>
+                        <td style="border: 1px solid black">1</td>
+                        <td style="border: 1px solid black">Juego</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black">4.</td>
+                        <td style="border: 1px solid black">Llave Torx</td>
+                        <td style="border: 1px solid black">Herramienta manual</td>
+                        <td style="border: 1px solid black">3</td>
+                        <td style="border: 1px solid black">Juegos</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="text-align: center; border: 1px solid black"><strong>Total de Unidades</strong></td>
+                        <td style="text-align: center; border: 1px solid black"><strong>10</strong></td>
+                        <td style="text-align: center; border: 1px solid black">-</td>
+                    </tr>
+
+                
+                </table>
+
+
+
             </fieldset>
 
 
