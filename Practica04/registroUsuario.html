@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MecaGest: Formulario de Registro de Nuevos Usuarios</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -65,6 +66,20 @@
                 <label for="horarioContacto">Favor de contactar en el horario:</label>
                 <input type="time" id="horarioContactoInicio" placeholder="09:00">
                 <input type="time" id="horarioContactoFin" placeholder="18:00">
+                <br>
+                <br>
+                <h4>Redes Sociales</h4>
+                <input type="checkbox" id="socialNetworks">
+                <label for="urlFacebook">Facebook:</label>
+                <input type="url" placeholder="http://www.facebook.com/userName">
+                <br>
+                <input type="checkbox" id="socialNetworks">
+                <label for="urllinkedn">Linkedn:</label>
+                <input type="url" placeholder="http://www.linkdn.com/userName">
+                <br>
+                <input type="checkbox" id="socialNetworks">
+                <label for="urlWhatsapp">WhatsApp: (Cargar QR)</label>
+                <input type="file" id="whatsAppQR" accept="image/*">
             </fieldset>
 
             <fieldset>
@@ -118,13 +133,25 @@
         <h4> Estos campos son para futuro uso, no son parte del Formulario Registro de Usuarios</h4>
         <form> <!--Elementos que usaremos mas adelante-->
             <fieldset>
-                <legend>Visualización de Citas por Mes:</legend>
-                <label for="mesCitas">Por favor elige un mes:</label>
-                <input type="month" id="mesCitas">
+                <legend>Visualización de Citas por:</legend>
+                <label for="mesCitas">Por favor, elige el mes:</label>
+                <label for="mesCitas">Por favor, elige el filtro:</label>
+
+                <input type="radio" value="Month" name="appoimentFilter" id="appoimentByMonth" checked>Mes
+                <input type="radio" value="Month" name="appoimentFilter" id="appoimentByWeek" >Semana
+                <br>
+                <br>
+
+                <input type="month" >
+                <br>
+                <br>
+                <input type="week" disabled>
+                
                 <button id="verCitas">Ver Citas</button>
+                
                 <br>
                 <br>
-                <h4>Las citas programadas para el mes elegido son:</h4>
+                <h4>Las citas programadas para el mes/semana elegido son:</h4>
                 <br>
                 <br>
                 <table style="border: 1px solid black">
@@ -186,12 +213,16 @@
                 <br>
                 <label for="backgroundColor">Color de fondo:</label>
                 <input type="color" id="backgroundColor" value="#CCC">
+                <br>
+                <label for="soundsVolume">Volumen de Sonidos</label>
+                <input type="range" id="soundsVolume" min="0" max="100" value="80">
+                <button id="muteSounds">Silenciar Sonidos</button>
             </fieldset>
 
             <fieldset>
                 <legend>Configuración de Mi cuenta /perfil: </legend>
                 <label for="userPhoto">Foto de Perfil:</label>
-                <input type="image" id="userPhoto" accept="image/*">
+                <input type="file" id="userPhoto" accept="image/*">
                 <br>
                 <br>
                 <input type="image" id="buttonNext" src="assets/images/next.gif" alt="Siguiente" width="50" height="50">
@@ -214,9 +245,23 @@
             <fieldset>
                 <legend>Solicitud de Cita: </legend>
                 <label for="dateAppoinment">Fecha de la Cita:</label>
-                <input type="date" id="dateAppoinment">
+                <input type="datetime-local" id="dateAppoinment">
                 <br>
                 <br>
+                <label for="locations">Elige la sucursal:</label>
+                <input list="locationsList" placeholder="Busca tu sucursal preferida...">
+                <datalist id="locationsList">
+                    <option>Xicotepec, Centro</option>
+                    <option>Xicotepec, El Tabacal</option>
+                    <option>San Isidro, Tierra Negra</option>
+                    <option>Necaxa, Canaditas</option>
+                    <option>Huauchinango, Petrolera 1</option>
+                </datalist>
+                
+                <br>
+                <br>
+
+
                 <label for="descriptionText">Descripción de la Cita:</label>
                 <textarea id="descriptionText"></textarea>
                 <br>

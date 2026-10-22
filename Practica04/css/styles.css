@@ -1,0 +1,866 @@
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #16324f;
+    --primary-light: #245b83;
+    --secondary: #00a6a6;
+    --background: #f1f5f9;
+    --white: #ffffff;
+    --text: #263445;
+    --muted: #64748b;
+    --border: #d8e1eb;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --radius: 12px;
+    --shadow: 0 4px 16px rgba(22, 50, 79, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 30px 18px;
+}
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
+header {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 35px 25px;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-light)
+    );
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+header h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #dbeafe;
+    font-size: 0.95rem;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+main > form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ==============================
+   SECCIONES Y FIELDSETS
+============================== */
+
+fieldset {
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+}
+
+legend {
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* ==============================
+   ETIQUETAS
+============================== */
+
+label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.92rem;
+}
+
+/* ==============================
+   CAMPOS DE FORMULARIO
+============================== */
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]),
+select,
+textarea {
+    max-width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fbfdff;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.92rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="datetime-local"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(0, 166, 166, 0.15);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #f8fafc;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ==============================
+   CASILLAS Y OPCIONES
+============================== */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--secondary);
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 5px 7px 10px 0;
+}
+
+input[type="color"] {
+    width: 65px;
+    height: 42px;
+    padding: 4px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-bottom: 14px;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--secondary);
+    cursor: pointer;
+    margin: 12px 0 20px;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin: 8px 8px 8px 0;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+input[type="reset"] {
+    background: #64748b;
+}
+
+input[type="reset"]:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* ==============================
+   TÍTULOS SECUNDARIOS
+============================== */
+
+h4 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin: 15px 0 12px;
+}
+
+fieldset h4 {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+}
+
+/* ==============================
+   TABLAS
+============================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    background: var(--white);
+    border: 1px solid var(--border) !important;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    border: 1px solid var(--border) !important;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.88rem;
+    vertical-align: top;
+}
+
+th {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+    background: #f1f7fb;
+}
+
+tr:hover td {
+    background-color: #e8f5f5;
+}
+
+/* ==============================
+   OPCIONES Y AGRUPACIONES
+============================== */
+
+optgroup {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+option {
+    color: var(--text);
+}
+
+input:disabled {
+    background: #e2e8f0;
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+/* ==============================
+   IMÁGENES Y CAMPOS ESPECIALES
+============================== */
+
+input[type="image"] {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+/* ==============================
+   DISEÑO RESPONSIVO
+============================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.15rem;
+    }
+
+    fieldset {
+        padding: 20px 14px;
+    }
+
+    legend {
+        font-size: 0.9rem;
+        padding: 7px 12px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        min-width: 100px;
+        padding: 9px;
+        font-size: 0.8rem;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    fieldset {
+        padding: 18px 12px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+   TEMA MORADO, NEGRO Y ROJO
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7209B7;
+    --primary-light: #9D4EDD;
+    --secondary: #E11D48;
+    --background: #111014;
+    --surface: #1B1820;
+    --surface-light: #27222E;
+    --white: #FFFFFF;
+    --text: #F5F3F7;
+    --muted: #B8ACBF;
+    --border: #403647;
+    --success: #22C55E;
+    --danger: #F43F5E;
+    --radius: 12px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.30);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 30px 18px;
+}
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
+header {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 40px 25px;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        #4C087D,
+        #7209B7,
+        #9D174D
+    );
+    border: 1px solid #A855F7;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(114, 9, 183, 0.25);
+}
+
+header h1 {
+    font-size: 2.7rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+header h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #F3E8FF;
+    font-size: 0.95rem;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+main > form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ==============================
+   SECCIONES Y FIELDSETS
+============================== */
+
+fieldset {
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary-light);
+    border-radius: var(--radius);
+    background: var(--surface);
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+}
+
+legend {
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px 18px;
+    border: 1px solid #A855F7;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* ==============================
+   ETIQUETAS
+============================== */
+
+label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #D8B4FE;
+    font-size: 0.92rem;
+}
+
+/* ==============================
+   CAMPOS DE FORMULARIO
+============================== */
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]):not([type="hidden"]),
+select,
+textarea {
+    max-width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-light);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.92rem;
+    transition: border-color 0.2s, box-shadow 0.2s,
+                background 0.2s;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="datetime-local"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #A99BB3;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #C084FC;
+    box-shadow: 0 0 0 3px rgba(157, 78, 221, 0.25);
+    background: #302638;
+}
+
+select option,
+optgroup {
+    background: var(--surface);
+    color: var(--text);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* ==============================
+   ARCHIVOS
+============================== */
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: var(--surface-light);
+    color: var(--text);
+    border: 1px dashed var(--primary-light);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+input[type="file"]::file-selector-button {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+/* ==============================
+   CASILLAS Y OPCIONES
+============================== */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--secondary);
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 5px 7px 10px 0;
+}
+
+input[type="color"] {
+    width: 65px;
+    height: 42px;
+    padding: 4px;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-bottom: 14px;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--secondary);
+    cursor: pointer;
+    margin: 12px 0 20px;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s,
+                box-shadow 0.2s;
+    margin: 8px 8px 8px 0;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(157, 78, 221, 0.25);
+}
+
+input[type="reset"] {
+    background: var(--secondary);
+}
+
+input[type="reset"]:hover {
+    background: #BE123C;
+    transform: translateY(-2px);
+}
+
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="reset"]:focus-visible {
+    outline: 3px solid #D8B4FE;
+    outline-offset: 3px;
+}
+
+/* ==============================
+   TÍTULOS SECUNDARIOS
+============================== */
+
+h4 {
+    color: #E9D5FF;
+    font-size: 1rem;
+    margin: 15px 0 12px;
+}
+
+fieldset h4 {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+}
+
+/* ==============================
+   TABLAS
+============================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 12px;
+    text-align: left;
+    font-size: 0.88rem;
+    vertical-align: top;
+}
+
+th {
+    background: #4C087D;
+    color: var(--white);
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+    background: #241D2B;
+}
+
+tr:hover td {
+    background-color: #38213F;
+}
+
+/* ==============================
+   ESTADOS Y CAMPOS DESACTIVADOS
+============================== */
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+    background: #302B35;
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+input[type="image"] {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+/* ==============================
+   ENLACES Y SELECCIÓN
+============================== */
+
+a {
+    color: #D8B4FE;
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ==============================
+   DISEÑO RESPONSIVO
+============================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.15rem;
+    }
+
+    fieldset {
+        padding: 20px 14px;
+    }
+
+    legend {
+        font-size: 0.9rem;
+        padding: 7px 12px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    th,
+    td {
+        min-width: 100px;
+        padding: 9px;
+        font-size: 0.8rem;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    fieldset {
+        padding: 18px 12px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+        margin-right: 0;
+    }
+}
