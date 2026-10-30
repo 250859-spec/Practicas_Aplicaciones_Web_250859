@@ -50,7 +50,8 @@
             <br>
             <br>
             <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento">
+            <input type="date" id="fechaNacimiento" onchange="calcularEdad()"> <!--aqui se calcula la edad del usuario y se muestra en el campo de texto-->
+            <p id="mensajeEdad"></p>
             </fieldset>
 
             <fieldset>
@@ -365,6 +366,70 @@
 
         </form>
     </main>
+
+    <script>
+        console.log("Hola Mundo, desde JavaScript");
+    </script>
+
+    
+<script>
+    // Primera funcionalidad: mensaje en consola
+    console.log("Hola Mundo, desde JavaScript");
+
+
+    // Segunda funcionalidad: calcular edad
+    function calcularEdad() {
+
+        // Obtener la fecha de nacimiento
+        const fecha = document.getElementById("fechaNacimiento").value;
+
+        // Obtener el espacio donde mostraremos el mensaje
+        const mensaje = document.getElementById("mensajeEdad");
+
+        // Verificar que se haya seleccionado una fecha
+        if (fecha === "") {
+            mensaje.textContent = "";
+            return;
+        }
+
+        // Separar año, mes y día
+        const [anio, mes, dia] = fecha.split("-").map(Number);
+
+        // Obtener la fecha actual
+        const hoy = new Date();
+
+        let edad = hoy.getFullYear() - anio;
+
+        // Comprobar si ya cumplió años este año
+        if (
+            hoy.getMonth() + 1 < mes ||
+            (hoy.getMonth() + 1 === mes && hoy.getDate() < dia)
+        ) {
+            edad--;
+        }
+
+        // Validar fecha futura o inexistente
+        const nacimiento = new Date(anio, mes - 1, dia);
+
+        if (
+            nacimiento > hoy ||
+            nacimiento.getFullYear() !== anio ||
+            nacimiento.getMonth() !== mes - 1 ||
+            nacimiento.getDate() !== dia
+        ) {
+            mensaje.textContent = "Fecha de nacimiento no válida.";
+            return;
+        }
+
+        // Mostrar resultado
+        if (edad >= 18) {
+            mensaje.textContent = "El usuario es MAYOR de edad.";
+        } else {
+            mensaje.textContent = "El usuario es MENOR de edad.";
+        }
+    }
+</script>
+
     
 </body>
 </html>
