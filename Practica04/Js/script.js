@@ -15,13 +15,17 @@ function calcularEdad() {
 
     const mensaje = document.getElementById("mensajeEdad");
 
-    if (!document.getElementById("fechaNacimiento").value) {
-        mensaje.textContent = "";
-    } else if (fecha > hoy) {
-        mensaje.textContent = "Fecha no válida.";
-    } else if (edad >= 18) {
-        mensaje.textContent = "El usuario es MAYOR de edad.";
-    } else {
-        mensaje.textContent = "El usuario es MENOR de edad.";
-    }
+if (!document.getElementById("fechaNacimiento").value) {
+    mensaje.textContent = "";
+    mensaje.style.color = "";
+} else if (fecha > hoy) {
+    mensaje.textContent = "Fecha no válida.";
+    mensaje.style.color = "orange";
+} else if (edad >= 18) {
+    mensaje.textContent = "El usuario es MAYOR de edad.";
+    mensaje.style.color = "green";
+} else {
+    mensaje.textContent = "El usuario es MENOR de edad.";
+    mensaje.style.color = "red";
+}
 }
